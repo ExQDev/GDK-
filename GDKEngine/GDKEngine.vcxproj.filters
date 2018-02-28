@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{245d431e-5ad4-47af-898b-1637aa252848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\API">
+      <UniqueIdentifier>{e8d7a8a3-5516-463d-96ed-4e840c59ea8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Render">
+      <UniqueIdentifier>{8a4378fa-ef94-4dfb-89c1-4ef7684629e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Audio">
+      <UniqueIdentifier>{b14aa2ce-1726-4bd4-8fdc-6992cffeb8d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Physics">
+      <UniqueIdentifier>{8b5e3cf5-6ffc-4424-b21f-e402daed8720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\API\Model">
+      <UniqueIdentifier>{980c1f53-67cc-4aaf-af92-e0917df2757f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Clock.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Color.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Game.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\GameObject.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Include.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Math.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Module.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Scene.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Time.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Transform.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Vector.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\GUI.h">
+      <Filter>Header Files\Engine\API</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -13,27 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Engine">
-      <UniqueIdentifier>{c94bb112-834b-47f7-aee6-9717e8d022b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Engine\Render">
-      <UniqueIdentifier>{cd4271cc-6cc3-4f82-a0dd-9639b22581b4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Engine\Network">
-      <UniqueIdentifier>{a2a59e45-3abd-449d-bc13-48520ae8f623}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Engine\Physics">
-      <UniqueIdentifier>{cf41e94a-b732-4a65-89e8-ec3f8988c211}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Engine\API">
-      <UniqueIdentifier>{69cc172d-d1d2-448a-b239-1e75b91741f8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Engine\Audio">
-      <UniqueIdentifier>{0be9b1aa-d61e-4968-a13c-428d81f8af70}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Engine\GUI">
-      <UniqueIdentifier>{3e6ba0a5-677a-4f88-b2b1-961016aa1cfc}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -50,30 +29,6 @@
     </ClInclude>
     <ClInclude Include="Modular.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\Game.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\Clock.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\Time.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\Transform.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\Vector.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\GameObject.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\Model\Math.h">
-      <Filter>Header Files\Engine\API</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\API\GUI.h">
-      <Filter>Header Files\Engine\API</Filter>
     </ClInclude>
     <ClInclude Include="versioninfo.h">
       <Filter>Header Files</Filter>

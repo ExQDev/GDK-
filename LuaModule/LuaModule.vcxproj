@@ -178,6 +178,9 @@
     <None Include="exports.def" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GDKEngine\GDKEngine.vcxproj">
+      <Project>{f41162b0-4d3b-4acf-ba69-2308c3b42ae2}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\GDKInterface\GDKInterface.vcxproj">
       <Project>{a47f29c0-2d61-49f0-b3d3-e88370263dc2}</Project>
     </ProjectReference>
