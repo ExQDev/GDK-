@@ -179,6 +179,9 @@
     <ClInclude Include="Engine\API\Model\Time.h" />
     <ClInclude Include="Engine\API\Model\Transform.h" />
     <ClInclude Include="Engine\API\Model\Vector.h" />
+    <ClInclude Include="Engine\Render\DirectX\DirectXRenderer.h" />
+    <ClInclude Include="Engine\Render\IRenderer.h" />
+    <ClInclude Include="Engine\Render\OpenGL\OpenGLRenderer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

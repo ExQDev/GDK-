@@ -31,6 +31,12 @@
     <Filter Include="Header Files\Engine\API\Model">
       <UniqueIdentifier>{980c1f53-67cc-4aaf-af92-e0917df2757f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Render\OpenGL">
+      <UniqueIdentifier>{8de586ae-ccc7-4acc-96a6-2d23ea30a1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Render\DirectX">
+      <UniqueIdentifier>{9890f63c-65bc-4320-8b33-9f0197b59aba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -74,6 +80,15 @@
     </ClInclude>
     <ClInclude Include="Engine\API\GUI.h">
       <Filter>Header Files\Engine\API</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Render\IRenderer.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Render\OpenGL\OpenGLRenderer.h">
+      <Filter>Header Files\Engine\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Render\DirectX\DirectXRenderer.h">
+      <Filter>Header Files\Engine\Render\DirectX</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
