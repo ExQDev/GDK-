@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GDK++", "GDK++\GDK++.vcxproj", "{CFD3D1CC-4627-48D2-A6DE-3EB8FC816177}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GDKInterface", "GDKInterface\GDKInterface.vcxproj", "{A47F29C0-2D61-49F0-B3D3-E88370263DC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaModule", "LuaModule\LuaModule.vcxproj", "{6161F1BE-63C3-47E2-8C13-699429C5861A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +25,22 @@ Global
 		{CFD3D1CC-4627-48D2-A6DE-3EB8FC816177}.Release|x64.Build.0 = Release|x64
 		{CFD3D1CC-4627-48D2-A6DE-3EB8FC816177}.Release|x86.ActiveCfg = Release|Win32
 		{CFD3D1CC-4627-48D2-A6DE-3EB8FC816177}.Release|x86.Build.0 = Release|Win32
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Debug|x64.ActiveCfg = Debug|x64
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Debug|x64.Build.0 = Debug|x64
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Debug|x86.ActiveCfg = Debug|Win32
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Debug|x86.Build.0 = Debug|Win32
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Release|x64.ActiveCfg = Release|x64
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Release|x64.Build.0 = Release|x64
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Release|x86.ActiveCfg = Release|Win32
+		{A47F29C0-2D61-49F0-B3D3-E88370263DC2}.Release|x86.Build.0 = Release|Win32
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Debug|x64.ActiveCfg = Debug|x64
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Debug|x64.Build.0 = Debug|x64
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Debug|x86.ActiveCfg = Debug|Win32
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Debug|x86.Build.0 = Debug|Win32
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Release|x64.ActiveCfg = Release|x64
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Release|x64.Build.0 = Release|x64
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Release|x86.ActiveCfg = Release|Win32
+		{6161F1BE-63C3-47E2-8C13-699429C5861A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
