@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include <Windows.h>
 #include "ID.h"
 #include "Vector.h"
 #include "Color.h"
@@ -17,6 +18,8 @@
 #include "Component.h"
 #include "Script.h"
 #include "Texture.h"
+#include "Shader.h"
+#include "Material.h"
 
 // --------------Already defined troouble-----------------
 //Vector3 toVector3(Vector2 *pthis)

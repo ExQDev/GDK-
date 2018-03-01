@@ -37,6 +37,15 @@
     <Filter Include="Header Files\Engine\Render\DirectX">
       <UniqueIdentifier>{9890f63c-65bc-4320-8b33-9f0197b59aba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{94ab2ded-c40a-4fa4-acd8-fa4a534c9ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\API">
+      <UniqueIdentifier>{c3893106-b774-44be-bcb2-4660c3ffab75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\API\Model">
+      <UniqueIdentifier>{d76ee44e-548c-4f27-abd5-c1600ac1a6ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -109,6 +118,9 @@
       <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
     <ClInclude Include="Engine\API\Model\Shader.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Collider.h">
       <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaModule", "LuaModule\LuaM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GDKEngine", "GDKEngine\GDKEngine.vcxproj", "{F41162B0-4D3B-4ACF-BA69-2308C3B42AE2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreCLRModule", "CoreCLRModule\CoreCLRModule.vcxproj", "{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{F41162B0-4D3B-4ACF-BA69-2308C3B42AE2}.Release|x64.Build.0 = Release|x64
 		{F41162B0-4D3B-4ACF-BA69-2308C3B42AE2}.Release|x86.ActiveCfg = Release|Win32
 		{F41162B0-4D3B-4ACF-BA69-2308C3B42AE2}.Release|x86.Build.0 = Release|Win32
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Debug|x64.ActiveCfg = Debug|x64
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Debug|x64.Build.0 = Debug|x64
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Debug|x86.ActiveCfg = Debug|Win32
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Debug|x86.Build.0 = Debug|Win32
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Release|x64.ActiveCfg = Release|x64
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Release|x64.Build.0 = Release|x64
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Release|x86.ActiveCfg = Release|Win32
+		{D07B5CF9-205B-4917-8D63-CEDE3A2EEB4C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
