@@ -444,5 +444,91 @@ public:
 	}
 };
 
+class Quaternion : public Vector4
+{
+public:
+	Quaternion() {}
+	Quaternion(double x, double y, double z, double w)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+		this->w = w;
+	}
+
+	Quaternion operator+(Quaternion other) 
+	{
+		Quaternion tmp = *static_cast<Quaternion*>(&(*static_cast<Vector4*>(this) + (Vector4)other));
+		return tmp;
+	}
+	
+	Quaternion operator+=(Quaternion other) 
+	{
+		*((Vector4*)this) += other;
+		return *this;
+	}
+	
+	Quaternion operator-(Quaternion other) 
+	{
+		Quaternion tmp = *static_cast<Quaternion*>(&(*static_cast<Vector4*>(this) - (Vector4)other));
+		return tmp;
+	}
+	
+	
+	Quaternion operator-=(Quaternion other) 
+	{
+		*((Vector4*)this) -= (Vector4)other;
+		return *this;
+	}
+
+	Quaternion operator*(Quaternion other) 
+	{
+		Quaternion tmp = *static_cast<Quaternion*>(&(*static_cast<Vector4*>(this) * (Vector4)other));
+		return tmp;
+	}
+
+	Quaternion operator*=(Quaternion other) 
+	{
+		*((Vector4*)this) *= (Vector4)other;
+		return *this;
+	}
+
+	Quaternion operator/(Quaternion other) 
+	{
+		Quaternion tmp = *static_cast<Quaternion*>(&(*static_cast<Vector4*>(this) / (Vector4)other));
+		return tmp;
+	}
+
+	Quaternion operator/=(Quaternion other) 
+	{
+		*((Vector4*)this) /= (Vector4)other;
+		return *this;
+	}
+
+	Quaternion operator*(double other)
+	{
+		Quaternion tmp = *(Quaternion*)&((*(Vector4*)this) * other);
+		return tmp;
+	}
+
+	Quaternion operator*=(double other)
+	{
+		(*(Vector4*)this) *= other;
+		return *this;
+	}
+
+	Quaternion operator/(double other)
+	{
+		Quaternion tmp = *(Quaternion*)&((*(Vector4*)this) / other);
+		return tmp;
+	}
+
+	Quaternion operator/=(double other)
+	{
+		(*(Vector4*)this) /= other;
+		return *this;
+	}
+};
+
 #endif // !GDK_VECTOR_H
 
