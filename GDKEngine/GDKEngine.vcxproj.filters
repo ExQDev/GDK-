@@ -90,6 +90,27 @@
     <ClInclude Include="Engine\Render\DirectX\DirectXRenderer.h">
       <Filter>Header Files\Engine\Render\DirectX</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\API\Model\Texture.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Component.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Script.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\ID.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Package.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Material.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Shader.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

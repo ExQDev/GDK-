@@ -103,7 +103,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -122,7 +122,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -145,7 +145,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -170,12 +170,19 @@
     <ClInclude Include="Engine\API\GUI.h" />
     <ClInclude Include="Engine\API\Model\Clock.h" />
     <ClInclude Include="Engine\API\Model\Color.h" />
+    <ClInclude Include="Engine\API\Model\Component.h" />
     <ClInclude Include="Engine\API\Model\Game.h" />
     <ClInclude Include="Engine\API\Model\GameObject.h" />
+    <ClInclude Include="Engine\API\Model\ID.h" />
     <ClInclude Include="Engine\API\Model\Include.h" />
+    <ClInclude Include="Engine\API\Model\Material.h" />
     <ClInclude Include="Engine\API\Model\Math.h" />
     <ClInclude Include="Engine\API\Model\Module.h" />
+    <ClInclude Include="Engine\API\Model\Package.h" />
     <ClInclude Include="Engine\API\Model\Scene.h" />
+    <ClInclude Include="Engine\API\Model\Script.h" />
+    <ClInclude Include="Engine\API\Model\Shader.h" />
+    <ClInclude Include="Engine\API\Model\Texture.h" />
     <ClInclude Include="Engine\API\Model\Time.h" />
     <ClInclude Include="Engine\API\Model\Transform.h" />
     <ClInclude Include="Engine\API\Model\Vector.h" />
