@@ -123,6 +123,9 @@
     <ClInclude Include="Engine\API\Model\Collider.h">
       <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Render\DirectX\DXWindow.h">
+      <Filter>Header Files\Engine\Render\DirectX</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
