@@ -1,0 +1,2 @@
+Note that folder "lib" must be distributed with the root application folder.
+mono-2.0.dll and Mono.CSharp.dll too.

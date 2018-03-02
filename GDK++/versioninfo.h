@@ -10,15 +10,15 @@
 #ifndef VERSIONNO__H
 #define VERSIONNO__H
 
-#define VERSION_FULL           0.1.33.0
+#define VERSION_FULL           0.1.34.0
 
 #define VERSION_BASEYEAR       0
-#define VERSION_DATE           "2018-03-01"
-#define VERSION_TIME           "15:20:26"
+#define VERSION_DATE           "2018-03-02"
+#define VERSION_TIME           "18:42:58"
 
 #define VERSION_MAJOR          0
 #define VERSION_MINOR          1
-#define VERSION_BUILDNO        33
+#define VERSION_BUILDNO        34
 #define VERSION_EXTEND         0
 
 #define VERSION_FILE           1,0,0,0
