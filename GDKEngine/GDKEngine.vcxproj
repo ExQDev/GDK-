@@ -117,7 +117,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MDXSDK\Lib\x86;D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MDXSDK\Lib\x64;D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\MDXSDK\Include;D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)Engine\API\Model\Include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
@@ -140,7 +140,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MDXSDK\Lib\x86;D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,7 +153,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\MDXSDK\Include;D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)Engine\API\Model\Include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
@@ -163,11 +163,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MDXSDK\Lib\x64;D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Engine\API\GUI.h" />
+    <ClInclude Include="Engine\API\Model\Camera.h" />
     <ClInclude Include="Engine\API\Model\Clock.h" />
     <ClInclude Include="Engine\API\Model\Collider.h" />
     <ClInclude Include="Engine\API\Model\Color.h" />
@@ -176,8 +177,11 @@
     <ClInclude Include="Engine\API\Model\GameObject.h" />
     <ClInclude Include="Engine\API\Model\ID.h" />
     <ClInclude Include="Engine\API\Model\Include.h" />
+    <ClInclude Include="Engine\API\Model\Light.h" />
     <ClInclude Include="Engine\API\Model\Material.h" />
     <ClInclude Include="Engine\API\Model\Math.h" />
+    <ClInclude Include="Engine\API\Model\Mesh.h" />
+    <ClInclude Include="Engine\API\Model\MeshRenderer.h" />
     <ClInclude Include="Engine\API\Model\Module.h" />
     <ClInclude Include="Engine\API\Model\Package.h" />
     <ClInclude Include="Engine\API\Model\Scene.h" />
@@ -188,13 +192,15 @@
     <ClInclude Include="Engine\API\Model\Transform.h" />
     <ClInclude Include="Engine\API\Model\Vector.h" />
     <ClInclude Include="Engine\Render\DirectX\DirectXRenderer.h" />
-    <ClInclude Include="Engine\Render\DirectX\DXWindow.h" />
+    <ClInclude Include="Engine\Render\DirectX\DXModel.h" />
     <ClInclude Include="Engine\Render\IRenderer.h" />
     <ClInclude Include="Engine\Render\OpenGL\OpenGLRenderer.h" />
+    <ClInclude Include="Engine\Render\RenderWindow.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\API\Model\Vector.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

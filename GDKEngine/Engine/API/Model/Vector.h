@@ -136,6 +136,8 @@ public:
 		this->z = z;
 	}
 
+	static const Vector3 forward, backward, up, left, right, down, zero, one;
+
 	double abs() 
 	{
 		return sqrt(x*x + y*y + z*z);
@@ -268,6 +270,7 @@ public:
 		return ss.str();
 	}
 };
+
 
 class Vector4 : public Vector3
 {
@@ -456,7 +459,123 @@ public:
 		this->w = w;
 	}
 
-	Quaternion operator+(Quaternion other) 
+	Quaternion operator = (const Quaternion& q)
+	{
+		w = q.w;
+		x = q.x;
+		y = q.y;
+		z = q.z;
+
+		return (*this);
+	}
+
+	Quaternion operator + (const Quaternion& q)
+	{
+		return Quaternion(w + q.w, x + q.x, y + q.y, z + q.z);
+	}
+
+	Quaternion operator - (const Quaternion& q)
+	{
+		return Quaternion(w - q.w, x - q.x, y - q.y, z - q.z);
+	}
+
+
+	Quaternion operator * (const Quaternion& q)
+	{
+		return Quaternion(
+			w*q.w - x * q.x - y * q.y - z * q.z,
+			w*q.x + x * q.w + y * q.z - z * q.y,
+			w*q.y + y * q.w + z * q.x - x * q.z,
+			w*q.z + z * q.w + x * q.y - y * q.x);
+	}
+
+	Quaternion operator / (Quaternion& q)
+	{
+		return ((*this) * (q.inverse()));
+	}
+
+	Quaternion operator += (const Quaternion& q)
+	{
+		w += q.w;
+		x += q.x;
+		y += q.y;
+		z += q.z;
+
+		return (*this);
+	}
+
+	Quaternion operator -= (const Quaternion& q)
+	{
+		w -= q.w;
+		x -= q.x;
+		y -= q.y;
+		z -= q.z;
+
+		return (*this);
+	}
+
+	Quaternion operator *= (const Quaternion& q)
+	{
+		double w_val = w * q.w - x * q.x - y * q.y - z * q.z;
+		double x_val = w * q.x + x * q.w + y * q.z - z * q.y;
+		double y_val = w * q.y + y * q.w + z * q.x - x * q.z;
+		double z_val = w * q.z + z * q.w + x * q.y - y * q.x;
+
+		w = w_val;
+		x = x_val;
+		y = y_val;
+		z = z_val;
+
+		return (*this);
+	}
+
+	Quaternion operator /= (Quaternion& q)
+	{
+		(*this) = (*this)*q.inverse();
+		return (*this);
+	}
+
+	bool  operator != (const Quaternion& q)
+	{
+		return (w != q.w || x != q.x || y != q.y || z != q.z) ? true : false;
+	}
+
+	bool  operator == (const Quaternion& q)
+	{
+		return (w == q.w && x == q.x && y == q.y && z == q.z) ? true : false;
+	}
+
+	Quaternion scale(double  s)
+	{
+		return Quaternion(w*s, x*s, y*s, z*s);
+	}
+
+	Quaternion inverse()
+	{
+		return conjugate().scale(1 / norm());
+	}
+
+	Quaternion conjugate()
+	{
+		return Quaternion(w, -x, -y, -z);
+	}
+
+	double norm()
+	{
+		return (w*w + x * x + y * y + z * z);
+	}
+
+	double magnitude()
+	{
+		return sqrt(norm());
+	}
+
+
+	Quaternion UnitQuaternion()
+	{
+		return (*this).scale(1 / (*this).magnitude());
+	}
+	/*Quaternion operator+(Quaternion other) 
 	{
 		Quaternion tmp = *static_cast<Quaternion*>(&(*static_cast<Vector4*>(this) + (Vector4)other));
 		return tmp;
@@ -527,7 +646,7 @@ public:
 	{
 		(*(Vector4*)this) /= other;
 		return *this;
-	}
+	}*/
 };
 
 #endif // !GDK_VECTOR_H

@@ -4,11 +4,21 @@
 
 class ID {
 public:
-	long long unsigned int guid;
+	UINT32 id;
+
+	ID()
+	{
+		generate();
+	}
+
+	ID(UINT32 id) 
+	{
+		this->id = id;
+	}
 
 	void generate() 
 	{
-		
+		id = reinterpret_cast<UINT32>(this);
 	}
 };
 #endif // !GDK_ID_H

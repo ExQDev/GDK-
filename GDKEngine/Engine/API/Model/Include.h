@@ -6,20 +6,34 @@
 #include "ID.h"
 #include "Vector.h"
 #include "Color.h"
-#include "Package.h"
-#include "Clock.h"
-#include "Time.h"
-#include "Scene.h"
-#include "Game.h"
-#include "Transform.h"
-#include "GameObject.h"
 #include "Math.h"
-#include "Module.h"
+
 #include "Component.h"
+
 #include "Script.h"
 #include "Texture.h"
 #include "Shader.h"
 #include "Material.h"
+#include "Camera.h"
+#include "Mesh.h"
+#include "MeshRenderer.h"
+
+
+
+
+#include "Clock.h"
+#include "Time.h"
+
+#include "Transform.h"
+#include "GameObject.h"
+
+
+#include "Scene.h"
+#include "Game.h"
+#include "Package.h"
+#include "Module.h"
+
+
 
 // --------------Already defined troouble-----------------
 //Vector3 toVector3(Vector2 *pthis)

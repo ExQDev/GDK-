@@ -123,13 +123,31 @@
     <ClInclude Include="Engine\API\Model\Collider.h">
       <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Render\DirectX\DXWindow.h">
+    <ClInclude Include="Engine\Render\RenderWindow.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Render\DirectX\DXModel.h">
       <Filter>Header Files\Engine\Render\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Camera.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Mesh.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\Light.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\MeshRenderer.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\API\Model\Vector.cpp">
+      <Filter>Source Files\Engine\API\Model</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
