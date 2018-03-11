@@ -173,10 +173,12 @@
     <ClInclude Include="Engine\API\Model\Collider.h" />
     <ClInclude Include="Engine\API\Model\Color.h" />
     <ClInclude Include="Engine\API\Model\Component.h" />
+    <ClInclude Include="Engine\API\Model\DynamicContainer.h" />
     <ClInclude Include="Engine\API\Model\Game.h" />
     <ClInclude Include="Engine\API\Model\GameObject.h" />
     <ClInclude Include="Engine\API\Model\ID.h" />
     <ClInclude Include="Engine\API\Model\Include.h" />
+    <ClInclude Include="Engine\API\Model\Layers.h" />
     <ClInclude Include="Engine\API\Model\Light.h" />
     <ClInclude Include="Engine\API\Model\Material.h" />
     <ClInclude Include="Engine\API\Model\Math.h" />

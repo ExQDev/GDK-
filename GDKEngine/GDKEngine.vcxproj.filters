@@ -141,6 +141,12 @@
     <ClInclude Include="Engine\API\Model\MeshRenderer.h">
       <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\API\Model\Layers.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\API\Model\DynamicContainer.h">
+      <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

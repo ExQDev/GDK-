@@ -54,7 +54,7 @@ public:
 			MessageBox(renderWindowHandle, L"Failed to init DX Renderer!", L"GDK++ Render", 0);
 		}
 		renderer->currentScene = currentScene;
-		//run = new boost::thread(boost::bind(&IRenderer::Run, renderer));
+		run = new boost::thread(boost::bind(&IRenderer::Run, renderer));
 		// And show and update the window we just created
 		ShowWindow(renderWindowHandle, 1);
 		UpdateWindow(renderWindowHandle);

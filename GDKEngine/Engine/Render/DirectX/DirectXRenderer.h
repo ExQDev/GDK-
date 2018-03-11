@@ -25,16 +25,21 @@
 class DirectXRenderer : public IRenderer 
 {
 public:
+	HWND renderWindow;
+	D3DDEVTYPE deviceType = D3DDEVTYPE::D3DDEVTYPE_HAL;
+	int g_WindowWidth, g_WindowHeight;
+
 #ifdef USE_DX9
 	IDirect3D9* g_pD3D;
-	
+	// global declarations
+	LPDIRECT3D9 d3d;				 // the pointer to our Direct3D interface
+	LPDIRECT3DDEVICE9 d3ddev;		 // the pointer to the device class
+
 #endif // USE_DX9
 
 	
 	
-	HWND renderWindow;
-	D3DDEVTYPE deviceType = D3DDEVTYPE::D3DDEVTYPE_HAL;
-	int g_WindowWidth, g_WindowHeight;
+	
 	
 	//====================================================================================================
 #ifdef USE_DX10
@@ -113,7 +118,23 @@ public:
 		this->renderWindow = renderWindow;
 
 #ifdef USE_DX9
+		d3d = Direct3DCreate9(D3D_SDK_VERSION);    // create the Direct3D interface
 
+		D3DPRESENT_PARAMETERS d3dpp;    // create a struct to hold various device information
+
+		ZeroMemory(&d3dpp, sizeof(d3dpp));    // clear out the struct for use
+		d3dpp.Windowed = TRUE;    // program windowed, not fullscreen
+		d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;    // discard old frames
+		d3dpp.hDeviceWindow = renderWindow;    // set the window to be used by Direct3D
+
+
+									   // create a device class using this information and the info from the d3dpp stuct
+		d3d->CreateDevice(D3DADAPTER_DEFAULT,
+			D3DDEVTYPE_HAL,
+			renderWindow,
+			D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+			&d3dpp,
+			&d3ddev);
 #endif // USE_DX9
 
 #ifdef USE_DX10
@@ -253,7 +274,38 @@ public:
 #endif // USE_DX10
 
 #ifdef USE_DX9
+		// clear the window to a deep blue
+		d3ddev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(150, 150, 150), 1.0f, 0);
+		
 
+
+		//D3DXMATRIX matProjection;								// the projection transform matrix
+		//D3DXMatrixPerspectiveFovLH(&matProjection,
+		//	D3DXToRadian(fov),									// the horizontal field of view
+		//	(FLOAT)g_WindowWidth / (FLOAT)g_WindowHeight,		// aspect ratio
+		//	Near,												// the near view-plane
+		//	Far);												// the far view-plane
+		//d3ddev->SetTransform(D3DTS_PROJECTION, &matProjection);    // set the projection
+		
+		d3ddev->BeginScene();    // begins the 3D scene
+
+		// do 3D rendering on the back buffer here
+		//Render layers
+		for (auto x : currentScene->hierarchy) 
+		{
+			for (Component* c : x->components)
+			{
+				if (MeshRenderer* mr = dynamic_cast<MeshRenderer*>(c)) 
+				{
+					
+				}
+			}
+		}
+
+
+		d3ddev->EndScene();    // ends the 3D scene
+
+		d3ddev->Present(NULL, NULL, NULL, NULL);    // displays the created frame
 #endif // USE_DX9
 
 	}

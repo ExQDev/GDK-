@@ -1,6 +1,8 @@
 #pragma once
 #ifndef GDK_COMPONENT_H
 #define GDK_COMPONENT_H
+#include "../../../Dependencies/boolinq/boolinq.h"
+
 class GameObject;
 class Transform;
 class Script;

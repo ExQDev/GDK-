@@ -15,6 +15,7 @@ public:
 	IRenderer * renderer;
 	Texture renderTex;
 	int r_width = 640, r_height = 480;
+	int renderLayers;
 
 	Camera()
 	{}
@@ -23,6 +24,11 @@ public:
 	{
 		this->renderer = renderer;
 		this->renderer->transform = transform;
+		renderLayers = Layer::DEFAULT | Layer::SKY | Layer::SKY;
+#ifdef EDITOR
+		renderLayers |= Layer::EDITOR;
+#endif // EDITOR
+
 	}
 	
 	Camera(GameObject* parent, IRenderer *renderer) 

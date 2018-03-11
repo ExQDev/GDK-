@@ -2,6 +2,7 @@
 #ifndef GDK_GAMEOBJECT_H
 #define GDK_GAMEOBJECT_H
 #include "Transform.h"
+#include "Layers.h"
 
 class GameObject : public Component
 {
@@ -11,11 +12,16 @@ public:
 	ID id;
 	std::string name = "GameObject";
 	std::string tag = "Untagged";
+	int layer = Layer::DEFAULT;
+
 	boost::container::list<Component*> components;
+	boost::container::list<GameObject*> children;
 
 	GameObject(std::string name) 
 	{
 		this->name = name;
+		this->gameobject = this;
+		this->transform = transform;
 	}
 	~GameObject() {}
 
@@ -29,7 +35,12 @@ public:
 	void Pause() {}
 	void Destroy() 
 	{
-	
+		for (auto x : children)
+		{
+			x->Destroy();
+		}
+		parent->gameobject->children.remove(this);
+		delete this;
 	}
 
 private:
