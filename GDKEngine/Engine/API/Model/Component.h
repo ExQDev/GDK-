@@ -12,6 +12,8 @@ class Component
 {
 public:
 	bool enabled;
+	Transform* transform;
+	GameObject* gameobject;
 	virtual void Init(GameObject* parent) = 0;
 	virtual void Destroy() = 0;
 	virtual void Update() = 0;

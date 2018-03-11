@@ -4,28 +4,46 @@
 #include "../IRenderer.h"
 #include "DXModel.h"
 #pragma comment(lib, "winmm.lib")
+#ifdef USE_DX10
 #ifdef _DEBUG
 #   pragma comment(lib, "d3dx10d.lib")
 #else
 #   pragma comment(lib, "d3dx10.lib")
 #endif
 #pragma comment(lib, "d3d10.lib")
+#else
+#ifdef USE_DX9
+#ifdef _DEBUG
+#   pragma comment(lib, "d3dx9d.lib")
+#else
+#   pragma comment(lib, "d3dx9.lib")
+#endif
+#pragma comment(lib, "d3d9.lib")
+#endif
+#endif
 
 class DirectXRenderer : public IRenderer 
 {
 public:
+#ifdef USE_DX9
 	IDirect3D9* g_pD3D;
-	ID3D10Device* pD3DDevice = 0;
+	
+#endif // USE_DX9
+
+	
+	
 	HWND renderWindow;
 	D3DDEVTYPE deviceType = D3DDEVTYPE::D3DDEVTYPE_HAL;
 	int g_WindowWidth, g_WindowHeight;
 	
 	//====================================================================================================
-	float fov, aspectRatio, Near, Far;
-	//try to get the back buffer
+#ifdef USE_DX10
+	ID3D10Device* pD3DDevice = 0;
 	ID3D10Texture2D* pBackBuffer;
 	IDXGISwapChain* pSwapChain;
 	ID3D10RenderTargetView* pRenderTargetView;
+#endif // USE_DX10
+
 
 	const D3DXVECTOR3 dV, dU;               //default view and up vectors
 	D3DXVECTOR3 eye, view, up;
@@ -35,7 +53,7 @@ public:
 	D3DXMATRIX viewMatrix;
 	D3DXMATRIX projectionMatrix;
 	D3DXMATRIX rotationMatrix;
-	Transform* transform;
+	
 
 	//set projection methods
 	void setPerspectiveProjection(float FOV, float aspectRatio, float zNear, float zFar) 
@@ -57,6 +75,7 @@ public:
 
 	void updateView()
 	{
+		if (!transform)return;
 		//create rotation matrix
 		//D3DXMatrixRotationYawPitchRoll(&rotationMatrix, heading, pitch, 0);
 		auto quat = D3DXQUATERNION(transform->rotation.x, transform->rotation.y, transform->rotation.z, transform->rotation.w);
@@ -92,7 +111,12 @@ public:
 	bool Init(HINSTANCE hInst, HWND renderWindow, int width, int height, bool bWindowed) 
 	{
 		this->renderWindow = renderWindow;
-		
+
+#ifdef USE_DX9
+
+#endif // USE_DX9
+
+#ifdef USE_DX10
 		// Create the clear the DXGI_SWAP_CHAIN_DESC structure 
 		DXGI_SWAP_CHAIN_DESC swapChainDesc; 
 		ZeroMemory(&swapChainDesc, sizeof(swapChainDesc));
@@ -150,6 +174,7 @@ public:
 		viewPort.TopLeftX = 0; 
 		viewPort.TopLeftY = 0; 
 		pD3DDevice->RSSetViewports(1, &viewPort);
+#endif // USE_DX10
 		return true;
 
 	}
@@ -205,7 +230,7 @@ public:
 		const float fRotationRateY = D3DX_PI / 4.0f;
 		const float fRotationRateZ = D3DX_PI / 2.0f;
 		
-		//updateView();
+		updateView();
 
 		// Redraw our window
 		if(renderWindow)
@@ -214,7 +239,9 @@ public:
 
 	void Render() 
 	{
+#ifdef USE_DX10
 		if (pD3DDevice != NULL) { 
+			updateView();
 			// clear the target buffer 
 			pD3DDevice->ClearRenderTargetView(pRenderTargetView, D3DXCOLOR (0.0f, 0.0f, 0.0f, 0.0f));
 			
@@ -223,14 +250,12 @@ public:
 			// display the next item in the swap chain 
 			pSwapChain->Present(0, 0);
 		}
+#endif // USE_DX10
 
-		//// Render the scene
-		//pD3DDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(55, 55, 55), 1.0f, 0);
-		//pD3DDevice->BeginScene();
+#ifdef USE_DX9
 
-		//
-		//pD3DDevice->EndScene();
-		//pD3DDevice->Present(NULL, NULL, NULL, NULL);
+#endif // USE_DX9
+
 	}
 
 	void SwapBuffers() 
@@ -240,12 +265,20 @@ public:
 	
 	void Release()
 	{
+#ifdef USE_DX10
 		// release the rendertarget
 		if (pRenderTargetView) { pRenderTargetView->Release(); }
 		// release the swapchain 
 		if (pSwapChain) { pSwapChain->Release(); }
 		// release the D3D Device 
 		if (pD3DDevice) { pD3DDevice->Release(); }
+#endif // USE_DX10
+
+#ifdef USE_DX9
+
+#endif // USE_DX9
+
+		
 	}
 };
 #endif // !GDK_DXRENDERER_H

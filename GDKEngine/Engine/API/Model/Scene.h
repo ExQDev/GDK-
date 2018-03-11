@@ -1,11 +1,11 @@
 #pragma once
 #ifndef GDK_SCENE_H
 #define GDK_SCENE_H
-#include <boost\container\list.hpp>
 
-class Scene 
+class Scene
 {
 public:
+	std::string name = "Default scene";
 	boost::container::list<GameObject*> hierarchy;
 
 };

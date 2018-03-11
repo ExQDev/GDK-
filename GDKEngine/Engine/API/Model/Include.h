@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include <boost\container\list.hpp>
 #include <Windows.h>
 #include "ID.h"
 #include "Vector.h"

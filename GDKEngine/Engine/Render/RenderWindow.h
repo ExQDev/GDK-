@@ -12,9 +12,11 @@ public:
 	HWND renderWindowHandle;
 	IRenderer* renderer;
 	boost::thread *run;
+	Scene* currentScene;
 
-	RenderWindow(IRenderer::RendererType renderertype, int X, int Y, int H, int W, HINSTANCE app, HWND parent)
+	RenderWindow(IRenderer::RendererType renderertype, int X, int Y, int H, int W, HINSTANCE app, HWND parent, Scene* scene)
 	{
+		currentScene = scene;
 		renderWindowHandle = CreateWindowExW(
 			WS_EX_OVERLAPPEDWINDOW,     // DWORD dwExStyle
 			TEXT("GDKRenderWindow"),	// LPCWSTR lpClassName
@@ -51,7 +53,8 @@ public:
 		{
 			MessageBox(renderWindowHandle, L"Failed to init DX Renderer!", L"GDK++ Render", 0);
 		}
-		run = new boost::thread(boost::bind(&IRenderer::Run, renderer));
+		renderer->currentScene = currentScene;
+		//run = new boost::thread(boost::bind(&IRenderer::Run, renderer));
 		// And show and update the window we just created
 		ShowWindow(renderWindowHandle, 1);
 		UpdateWindow(renderWindowHandle);

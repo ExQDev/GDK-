@@ -1,10 +1,14 @@
 #pragma once
 #ifndef GDK_DXMODEL_H
 #define GDK_DXMODEL_H
-#include <d3d9.h>
-#include <d3dx9.h>
+
+#ifdef USE_DX10
 #include <D3D10.h>
 #include <D3D10shader.h>
+#else
+#ifdef USE_DX9
+#include <d3d9.h>
+#include <d3dx9.h>
 
 const D3DXCOLOR WHITE(D3DCOLOR_XRGB(255, 255, 255));
 const D3DXCOLOR BLACK(D3DCOLOR_XRGB(0, 0, 0));
@@ -30,4 +34,9 @@ typedef struct CVF
 	float     u, v;   // 1st set, 2D
 	float     t;      // 2nd set, 1D
 } CustomVertexFormat;
+#endif // USE_DX9
+#endif // USE_DX10
+
+
+
 #endif // !GDK_DXMODEL_H
