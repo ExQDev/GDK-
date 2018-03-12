@@ -1,0 +1,3 @@
+D:/My Projects/GDK++/GDK++/CMakeFiles/GDK++.dir
+D:/My Projects/GDK++/GDK++/CMakeFiles/ALL_BUILD.dir
+D:/My Projects/GDK++/GDK++/CMakeFiles/ZERO_CHECK.dir

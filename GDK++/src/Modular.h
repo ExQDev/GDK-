@@ -1,7 +1,7 @@
 #pragma once
 #ifndef GDK_MODULAR_H
 #define GDK_MODULAR_H
-#include "../GDKInterface/GDKInteface.h"
+#include "../../GDKInterface/GDKInteface.h"
 
 #define BOOST_FILESYSTEM_VERSION 3
 #define BOOST_FILESYSTEM_NO_DEPRECATED

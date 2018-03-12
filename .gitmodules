@@ -7,3 +7,6 @@
 [submodule "GDKEngine/Dependencies/boolinq"]
 	path = GDKEngine/Dependencies/boolinq
 	url = https://github.com/k06a/boolinq.git
+[submodule "GDKEngine/Dependencies/assimp"]
+	path = GDKEngine/Dependencies/assimp
+	url = https://github.com/assimp/assimp.git

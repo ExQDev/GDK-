@@ -1,7 +1,7 @@
 #pragma once
 #ifndef GDK_SETTINGS_H
 #define GDK_SETTINGS_H
-#include "../GDKEngine/Engine/Render/IRenderer.h"
+#include "../../GDKEngine/Engine/Render/IRenderer.h"
 
 #define GDK_PROJ_EXT	".ngdkproj"
 
