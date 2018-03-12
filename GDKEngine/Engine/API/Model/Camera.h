@@ -24,7 +24,7 @@ public:
 	{
 		this->renderer = renderer;
 		this->renderer->transform = transform;
-		renderLayers = Layer::DEFAULT | Layer::SKY | Layer::SKY;
+		renderLayers = Layer::DEFAULT | Layer::SKY | Layer::WATER;
 #ifdef EDITOR
 		renderLayers |= Layer::EDITOR;
 #endif // EDITOR

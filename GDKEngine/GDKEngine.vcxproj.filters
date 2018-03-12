@@ -46,6 +46,24 @@
     <Filter Include="Source Files\Engine\API\Model">
       <UniqueIdentifier>{d76ee44e-548c-4f27-abd5-c1600ac1a6ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Dependencies">
+      <UniqueIdentifier>{552668b3-62fa-438c-a783-63a3470eb939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\boolinq">
+      <UniqueIdentifier>{0b6d8e80-44f3-44e7-ae34-154ff6b4b194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear">
+      <UniqueIdentifier>{39079470-d648-4c47-abe7-f2a60205f168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear\nuklear_drivers">
+      <UniqueIdentifier>{3446ad75-8713-4e95-9444-7eb6d81c98b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear\nkc_frontend">
+      <UniqueIdentifier>{268c2871-b5a1-4f2a-822b-e4630183b9b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear\nkc_frontend\helpers">
+      <UniqueIdentifier>{5445f024-c883-4a17-b08f-2cb74f5d99fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -144,8 +162,80 @@
     <ClInclude Include="Engine\API\Model\Layers.h">
       <Filter>Header Files\Engine\API\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\API\Model\DynamicContainer.h">
-      <Filter>Header Files\Engine\API\Model</Filter>
+    <ClInclude Include="Dependencies\boolinq\boolinq.h">
+      <Filter>Header Files\Dependencies\boolinq</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear.h">
+      <Filter>Header Files\Dependencies\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_cross.h">
+      <Filter>Header Files\Dependencies\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\stb_image.h">
+      <Filter>Header Files\Dependencies\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_gdip.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_glfw_emscripten.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_glfw_gl2.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_glfw_gl3.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_sdl_gl2.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_sdl_gl3.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_sdl_gles2.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib_gl2.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib_gl3.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib_prev.h">
+      <Filter>Header Files\Dependencies\nuklear\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_gdip.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_glfw.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_sdl.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_xlib.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_emscripten.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_file.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_font_stash.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_keyboard.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_stb_image.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_stbi_unused.h">
+      <Filter>Header Files\Dependencies\nuklear\nkc_frontend\helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +244,9 @@
     </ClCompile>
     <ClCompile Include="Engine\API\Model\Vector.cpp">
       <Filter>Source Files\Engine\API\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Dependencies\nuklear\nuklear_cross.c">
+      <Filter>Header Files\Dependencies\nuklear</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
