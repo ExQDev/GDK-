@@ -4,3 +4,6 @@
 [submodule "GDKEngine/Dependencies/nuklear_cross"]
 	path = GDKEngine/Dependencies/nuklear_cross
 	url = https://github.com/DeXP/nuklear_cross.git
+[submodule "GDKEngine/Dependencies/boolinq"]
+	path = GDKEngine/Dependencies/boolinq
+	url = https://github.com/k06a/boolinq.git
