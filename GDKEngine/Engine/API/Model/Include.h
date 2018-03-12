@@ -4,6 +4,7 @@
 #include <cmath>
 #include <boost\container\list.hpp>
 #include <Windows.h>
+
 #include "ID.h"
 #include "Vector.h"
 #include "Color.h"
@@ -34,7 +35,7 @@
 #include "Package.h"
 #include "Module.h"
 
-
+#include "AppInstance.h"
 
 // --------------Already defined troouble-----------------
 //Vector3 toVector3(Vector2 *pthis)

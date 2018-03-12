@@ -12,7 +12,7 @@ public:
 	ID id;
 	std::string name = "GameObject";
 	std::string tag = "Untagged";
-	int layer = Layer::DEFAULT;
+	int layer = Layer::L_DEFAULT;
 
 	boost::container::list<Component*> components;
 	boost::container::list<GameObject*> children;

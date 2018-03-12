@@ -4,6 +4,8 @@
 #include <boost/dll.hpp>
 using namespace boost;
 
+#include "EditorInstance.h"
+
 #define API extern "C" BOOST_SYMBOL_EXPORT
 
 class GDKModule {
@@ -24,10 +26,10 @@ public:
 	char version[30];
 
 	//Main process instance. Used by plugin from code.
-	HINSTANCE hnst;
+	AppInstance* instance;
 
 	//Function for run plugin. Runs in the background thread.
-	virtual void Run(HINSTANCE hinst) = 0;
+	virtual void Run(AppInstance* instance) = 0;
 
 	//Function that calls before plugin unloading. E.g. when app closes.
 	virtual void Shutdown() = 0;

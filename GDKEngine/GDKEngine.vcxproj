@@ -90,7 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\MDXSDK\Include;D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\boost\boost_1_66_0;D:\My Projects\GDK++\GDKEngine\Dependencies;C:\Program Files %28x86%29\MDXSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)Engine\API\Model\Include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
@@ -167,32 +167,8 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Dependencies\boolinq\boolinq.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_emscripten.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_file.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_font_stash.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_keyboard.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_stbi_unused.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\helpers\nkc_stb_image.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_gdip.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_glfw.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_sdl.h" />
-    <ClInclude Include="Dependencies\nuklear\nkc_frontend\nkc_xlib.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_cross.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_gdip.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_glfw_emscripten.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_glfw_gl2.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_glfw_gl3.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_sdl_gl2.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_sdl_gl3.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_sdl_gles2.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib_gl2.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib_gl3.h" />
-    <ClInclude Include="Dependencies\nuklear\nuklear_drivers\nuklear_xlib_prev.h" />
-    <ClInclude Include="Dependencies\nuklear\stb_image.h" />
     <ClInclude Include="Engine\API\GUI.h" />
+    <ClInclude Include="Engine\API\Model\AppInstance.h" />
     <ClInclude Include="Engine\API\Model\Camera.h" />
     <ClInclude Include="Engine\API\Model\Clock.h" />
     <ClInclude Include="Engine\API\Model\Collider.h" />
@@ -210,6 +186,7 @@
     <ClInclude Include="Engine\API\Model\MeshRenderer.h" />
     <ClInclude Include="Engine\API\Model\Module.h" />
     <ClInclude Include="Engine\API\Model\Package.h" />
+    <ClInclude Include="Engine\API\Model\Resource.h" />
     <ClInclude Include="Engine\API\Model\Scene.h" />
     <ClInclude Include="Engine\API\Model\Script.h" />
     <ClInclude Include="Engine\API\Model\Shader.h" />
@@ -226,7 +203,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Dependencies\nuklear\nuklear_cross.c" />
     <ClCompile Include="Engine\API\Model\Vector.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>

@@ -13,38 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\EditorUI">
-      <UniqueIdentifier>{52344897-adee-406d-8a67-274b7affe9da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Model">
-      <UniqueIdentifier>{8365bfa4-2c19-4dd2-bfcf-21f4bae1eb95}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GDK++.h">
+    <ClInclude Include="GDKEditor.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Modular.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="versioninfo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorGUI\EditorGUI.h">
-      <Filter>Header Files\EditorUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Model\Project.h">
-      <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GDK++.cpp">
+    <ClCompile Include="GDKEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

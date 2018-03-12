@@ -15,7 +15,7 @@ public:
 	IRenderer * renderer;
 	Texture renderTex;
 	int r_width = 640, r_height = 480;
-	int renderLayers;
+	unsigned long int renderLayers;
 
 	Camera()
 	{}
@@ -24,9 +24,9 @@ public:
 	{
 		this->renderer = renderer;
 		this->renderer->transform = transform;
-		renderLayers = Layer::DEFAULT | Layer::SKY | Layer::WATER;
+		renderLayers = GDK_LAYER_DEFAULT | GDK_LAYER_SKY | GDK_LAYER_WATER;
 #ifdef EDITOR
-		renderLayers |= Layer::EDITOR;
+		renderLayers |= GDK_LAYER_EDITOR;
 #endif // EDITOR
 
 	}

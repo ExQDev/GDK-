@@ -1,3 +1,2 @@
 #pragma once
-#include "Color.h"
-#include "versioninfo.h
+#include "versioninfo.h"

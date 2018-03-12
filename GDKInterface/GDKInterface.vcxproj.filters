@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\EditorMenu">
+      <UniqueIdentifier>{1bee1faa-7314-45ae-8c48-a1e7061116af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GDKInteface.h">
@@ -23,6 +26,15 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorMenu\MenuStrip.h">
+      <Filter>Header Files\EditorMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorMenu\MenuItem.h">
+      <Filter>Header Files\EditorMenu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
