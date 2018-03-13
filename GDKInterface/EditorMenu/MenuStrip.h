@@ -50,6 +50,11 @@ struct MenuStrip
 						}
 					}
 				}
+				else 
+				{
+					AddItem("", tokens.front(), 0);
+					AddItem(path, name, callback);
+				}
 				
 			}
 		}
