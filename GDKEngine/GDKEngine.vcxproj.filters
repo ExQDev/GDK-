@@ -46,6 +46,21 @@
     <Filter Include="Source Files\Engine\API\Model">
       <UniqueIdentifier>{d76ee44e-548c-4f27-abd5-c1600ac1a6ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Dependencies">
+      <UniqueIdentifier>{2398bea9-0666-4e26-bd4f-f846d348427b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear_cross">
+      <UniqueIdentifier>{4c7ab37a-e0ec-4170-b191-9d534e126bee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear_cross\nuklear_drivers">
+      <UniqueIdentifier>{03b7e3c8-d1db-43c5-9526-7ad7459d4a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear_cross\nkc_frontend">
+      <UniqueIdentifier>{cf04d664-d95a-4322-bb5a-7088edafc53d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers">
+      <UniqueIdentifier>{a843809c-0b8c-407d-b0bb-8d0a3cefbe27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -149,6 +164,78 @@
     </ClInclude>
     <ClInclude Include="Engine\API\Model\AppInstance.h">
       <Filter>Header Files\Engine\API\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear.h">
+      <Filter>Header Files\Dependencies\nuklear_cross</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_cross.h">
+      <Filter>Header Files\Dependencies\nuklear_cross</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\stb_image.h">
+      <Filter>Header Files\Dependencies\nuklear_cross</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_gdip.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_glfw_emscripten.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_glfw_gl2.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_glfw_gl3.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_sdl_gl2.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_sdl_gl3.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_sdl_gles2.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib_gl2.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib_gl3.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib_prev.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nuklear_drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_gdip.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_glfw.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_sdl.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_xlib.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_emscripten.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_file.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_font_stash.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_keyboard.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_stb_image.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_stbi_unused.h">
+      <Filter>Header Files\Dependencies\nuklear_cross\nkc_frontend\helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

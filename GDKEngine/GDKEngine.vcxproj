@@ -30,27 +30,28 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -88,7 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_DX9;_CRT_SECURE_NO_WARNINGS;NKC_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\boost\boost_1_66_0;D:\My Projects\GDK++\GDKEngine\Dependencies;C:\Program Files %28x86%29\MDXSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)Engine\API\Model\Include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -98,7 +99,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MDXSDK\Lib\x86;D:\boost\boost_1_66_0\lib32-msvc-14.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MDXSDK\Lib\x86;D:\boost\boost_1_66_0\lib32-msvc-14.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -128,9 +129,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;USE_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;USE_DX9;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\MDXSDK\Include;D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);C:\Program Files %28x86%29\MDXSDK\Include;D:\boost\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)Engine\API\Model\Include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
@@ -167,6 +168,30 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_emscripten.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_file.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_font_stash.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_keyboard.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_stbi_unused.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\helpers\nkc_stb_image.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_gdip.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_glfw.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_sdl.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nkc_frontend\nkc_xlib.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_cross.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_gdip.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_glfw_emscripten.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_glfw_gl2.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_glfw_gl3.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_sdl_gl2.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_sdl_gl3.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_sdl_gles2.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib_gl2.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib_gl3.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\nuklear_drivers\nuklear_xlib_prev.h" />
+    <ClInclude Include="Dependencies\nuklear_cross\stb_image.h" />
     <ClInclude Include="Engine\API\GUI.h" />
     <ClInclude Include="Engine\API\Model\AppInstance.h" />
     <ClInclude Include="Engine\API\Model\Camera.h" />

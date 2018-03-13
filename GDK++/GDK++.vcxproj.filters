@@ -4,6 +4,9 @@
     <ClCompile Include="D:\My Projects\GDK++\GDK++\src\GDK++.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\GDKEngine\Dependencies\nuklear_cross\nuklear_cross.c">
+      <Filter>Header Files\nuklear</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\My Projects\GDK++\GDK++\CMakeLists.txt" />
@@ -20,6 +23,9 @@
     </Filter>
     <Filter Include="Header Files\EditorUI">
       <UniqueIdentifier>{07fc4d96-8bbc-4956-8ac5-57dc2072f44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nuklear">
+      <UniqueIdentifier>{71cf91e8-d5b5-4956-ae40-da2486968328}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +49,15 @@
     </ClInclude>
     <ClInclude Include="src\EditorGUI\EditorGUI.h">
       <Filter>Header Files\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GDKEngine\Dependencies\nuklear_cross\nuklear.h">
+      <Filter>Header Files\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GDKEngine\Dependencies\nuklear_cross\nuklear_cross.h">
+      <Filter>Header Files\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GDKEngine\Dependencies\nuklear_cross\stb_image.h">
+      <Filter>Header Files\nuklear</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

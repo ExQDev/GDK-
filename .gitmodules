@@ -10,3 +10,15 @@
 [submodule "GDKEngine/Dependencies/assimp"]
 	path = GDKEngine/Dependencies/assimp
 	url = https://github.com/assimp/assimp.git
+[submodule "GDKEngine/Dependencies/lodepng"]
+	path = GDKEngine/Dependencies/lodepng
+	url = https://github.com/lvandeve/lodepng.git
+[submodule "GDKEngine/Dependencies/Linq"]
+	path = GDKEngine/Dependencies/Linq
+	url = https://github.com/pfultz2/Linq.git
+[submodule "GDKEngine/Dependencies/CINQ"]
+	path = GDKEngine/Dependencies/CINQ
+	url = https://github.com/jeb2239/CINQ.git
+[submodule "GDKEngine/Dependencies/xlinq"]
+	path = GDKEngine/Dependencies/xlinq
+	url = https://github.com/trolleyyy/xlinq.git

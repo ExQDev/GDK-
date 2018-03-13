@@ -26,17 +26,17 @@ void InitModules(EditorInstance* instance)
 	if (!bfs::exists(bfs::path(bfs::current_path().concat("/modules"))))
 	{
 		bfs::create_directory(bfs::current_path().concat("/modules"));
-		OutputDebugString("directory created!");
+		OutputDebugStringA("directory created!");
 	}
 
 	for (auto & p : boost::filesystem::directory_iterator(bfs::current_path().concat("/modules")))
 	{
 		if (!bfs::is_directory(p.path()))
 		{
-			OutputDebugString(p.path().extension().concat("\n").generic_string().c_str());
+			OutputDebugStringA(p.path().extension().concat("\n").generic_string().c_str());
 			if (p.path().extension() == ".dll")
 			{
-				OutputDebugString(bfs::path(p.path()).concat("\n").generic_string().c_str());
+				OutputDebugStringA(bfs::path(p.path()).concat("\n").generic_string().c_str());
 				boost::shared_ptr<GDKModule> plugin;
 				plugin = dll::import<GDKModule>(p.path(), "plugin");
 				modules.push_back(plugin);

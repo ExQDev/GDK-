@@ -7,20 +7,78 @@ struct MenuStrip
 {
 	boost::container::list<MenuItem*> strip;
 
-	bool CheckItem(std::string name) 
+	bool CheckItem(std::string path) 
 	{
 		for (auto x : strip) 
 		{
-			if (x->name == name)
+			if (x->Check(path))
 				return true;
 		}
 		return false;
 	}
 
-	void AddItem(std::string name, MenuItem::mi_callback callback)
+	void AddItem(std::string path, std::string name, std::function<void()> callback)
 	{
-		if(!CheckItem(name))
+		if (!path.empty()) {
+			if (CheckItem(path))
+				GetItem(path)->subitems.push_back(new MenuItem(name, callback));
+			else 
+			{
+				boost::char_separator<char> sep("/");
+				boost::tokenizer<boost::char_separator<char>> cnames(path, sep);
+				std::string retPath = "";
+				boost::container::list<std::string> tokens;
+				for (auto tkn : cnames)
+					tokens.push_back(tkn);
+				if (auto itm = GetItem(tokens.front()))
+				{
+					tokens.remove(tokens.front());
+					MenuItem* current;
+					for (auto pn : tokens)
+					{
+						if (auto item = current->Get(pn))
+							current = item;
+						else
+						{
+							MenuItem* x;
+							if (pn == tokens.back())
+								x = new MenuItem(pn, callback);
+							else
+								x = new MenuItem(pn, 0);
+							current->subitems.push_back(x);
+							current = x;
+						}
+					}
+				}
+				
+			}
+		}
+		else 
+		{
 			strip.push_back(new MenuItem(name, callback));
+		}
+	}
+	
+	MenuItem* GetItem(std::string path)
+	{
+		if(CheckItem(path))
+			for (auto item : strip) 
+			{
+				if (item->Check(path))
+					return item->Get(path);
+			}
+		return NULL;
+	}
+	
+	void RemoveItem(std::string path)
+	{
+		if(CheckItem(path))
+			for (auto item : strip)
+				if (item->Check(path))
+				{
+					strip.remove(item);
+					break;
+				}
 	}
 };
 #endif // !GDK_EDITOR_MENU_STRIP_H
