@@ -9,6 +9,8 @@
 #include <GDKEngine\Dependencies\nuklear_cross\stb_image.h>
 #include <GDKEngine\Dependencies\lodepng\lodepng.h>
 
+static bool renderWindow = true, hierarchyWindow = true, pluginMGR = true;
+
 void InitEUI(std::string title, int w, int h);
 void EditorWindow(void* loopArg);
 void EditorMenu(nk_context *ctx);
@@ -23,6 +25,23 @@ void About()
 	printf("About?:)");
 }
 
+void TogglePluginMGR() 
+{
+	pluginMGR = !pluginMGR;
+}
+
+void ToggleRenderWindow() 
+{
+	renderWindow = true;
+	nk_window_show(nkc_get_ctx(EditorInstance::GetSingleton()->nkc_handle), "Render", nk_show_states::NK_SHOWN);
+}
+
+void ToggleHierarchyWindow() 
+{
+	hierarchyWindow = true;
+	nk_window_show(nkc_get_ctx(EditorInstance::GetSingleton()->nkc_handle), "Hierarchy", nk_show_states::NK_SHOWN);
+}
+
 void InitMenu() 
 {
 	EditorInstance::GetSingleton()->menuStrip = new MenuStrip();
@@ -34,7 +53,11 @@ void InitMenu()
 	EditorInstance::GetSingleton()->menuStrip->AddItem("", "Assets", 0);
 	//EditorInstance::GetSingleton()->menuStrip->AddItem("", "", Exit);
 
-	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Plugin manager", About);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Plugin manager", TogglePluginMGR);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "--------------", 0);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Render window", ToggleRenderWindow);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Hierarchy window", ToggleHierarchyWindow);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "--------------", 0);
 	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "About", About);
 }
 
@@ -138,6 +161,34 @@ void EditorMenu(nk_context *ctx)
 	nk_menubar_end(ctx);
 }
 
+void HierarchyWindow(nk_context* ctx) 
+{
+	if (nk_begin(ctx, "Hierarchy", nk_rect(0, 40, 250, 350), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_CLOSABLE))
+	{
+		nk_layout_row_static(ctx, 200, 200, 1);
+		if (nk_group_begin(ctx, "HierarchyList", 0)) {
+			static int selectedGo = -1;
+			nk_layout_row_static(ctx, 18, 100, 1);
+			for (auto go : EditorInstance::GetSingleton()->currentScene->hierarchy) {
+				if (nk_select_label(ctx, go->name.c_str(), NK_TEXT_CENTERED, selectedGo == go->id.id))
+					selectedGo = go->id.id;
+			}
+		} nk_group_end(ctx);
+	}
+	
+	nk_end(ctx);
+}
+
+void RenderWindow(nk_context* ctx) 
+{
+	if (nk_begin(ctx, "Render", nk_rect(250, 40, 600, 350), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_CLOSABLE) != NK_WINDOW_CLOSED) 
+	{
+		
+	}
+	nk_end(ctx);
+
+}
+
 bool NKBeginFullScreen()
 {
 	auto myapp = EditorInstance::GetSingleton();
@@ -155,6 +206,23 @@ bool NKBeginFullScreen()
 	return nk_begin(ctx, " ", nk_rect(0, 0, x, y), NK_WINDOW_DYNAMIC | NK_WINDOW_SCROLL_AUTO_HIDE);
 }
 
+bool NKBeginWideScreen()
+{
+	auto myapp = EditorInstance::GetSingleton();
+	struct nk_context *ctx = nkc_get_ctx(myapp->nkc_handle);
+	int x, y;
+	nkc_get_desktop_size(myapp->nkc_handle, &x, &y);
+	RECT rect;
+	if (GetWindowRect(myapp->nkc_handle->window, &rect))
+	{
+		x = rect.right - rect.left;
+		y = rect.bottom - rect.top;
+	}
+	//printf("%i, %i", x, y);
+	//ctx->end->bounds.h;
+	return nk_begin(ctx, " ", nk_rect(0, 0, x, 40), NK_WINDOW_DYNAMIC | NK_WINDOW_SCROLL_AUTO_HIDE);
+}
+
 void EditorWindow(void* loopArg) 
 {
 	struct nk_context *ctx = nkc_get_ctx(EditorInstance::GetSingleton()->nkc_handle);
@@ -162,10 +230,18 @@ void EditorWindow(void* loopArg)
 	if ((e.type == NKC_EWINDOW) && (e.window.param == NKC_EQUIT)) {
 		nkc_stop_main_loop(EditorInstance::GetSingleton()->nkc_handle);
 	}
-	if (NKBeginFullScreen()) {
+	if (NKBeginWideScreen()) {
 		EditorMenu(ctx);
+		nk_end(ctx);
 	}
-	nk_end(ctx);
+	
+	if (renderWindow)
+		RenderWindow(ctx);
+
+
+	if (hierarchyWindow)
+		HierarchyWindow(ctx);
+
 	nkc_render(EditorInstance::GetSingleton()->nkc_handle, nk_rgb(40, 40, 40));
 }
 
