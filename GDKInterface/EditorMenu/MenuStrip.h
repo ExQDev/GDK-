@@ -33,7 +33,8 @@ struct MenuStrip
 				if (auto itm = GetItem(tokens.front()))
 				{
 					tokens.remove(tokens.front());
-					MenuItem* current;
+					MenuItem* current = itm;
+					
 					for (auto pn : tokens)
 					{
 						if (auto item = current->Get(pn))
