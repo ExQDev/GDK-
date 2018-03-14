@@ -167,11 +167,11 @@ void HierarchyWindow(nk_context* ctx)
 	{
 		nk_layout_row_static(ctx, 200, 200, 1);
 		if (nk_group_begin(ctx, "HierarchyList", 0)) {
-			static int selectedGo = -1;
+			
 			nk_layout_row_static(ctx, 18, 100, 1);
 			for (auto go : EditorInstance::GetSingleton()->currentScene->hierarchy) {
-				if (nk_select_label(ctx, go->name.c_str(), NK_TEXT_CENTERED, selectedGo == go->id.id))
-					selectedGo = go->id.id;
+				if (nk_select_label(ctx, go->name.c_str(), NK_TEXT_CENTERED, EditorInstance::GetSingleton()->selectedInHieararchy == go))
+					EditorInstance::GetSingleton()->selectedInHieararchy = go;
 			}
 		} nk_group_end(ctx);
 	}

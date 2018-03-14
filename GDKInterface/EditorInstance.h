@@ -13,6 +13,7 @@ protected:
 public:
 	struct nkc* nkc_handle;
 	MenuStrip* menuStrip;
+	GameObject* selectedInHieararchy;
 
 	static EditorInstance* GetSingleton() 
 	{
