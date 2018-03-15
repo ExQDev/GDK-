@@ -1,13 +1,13 @@
 # GDK++
-Open-source game engine(now in the start of its way) written on C++ and made with boost libs for Windows(WinAPI project) to fix usability of most known engines and get more flexible engine. Now is only for Windows, but you can help to make it cross-platform)
+Open-source game engine(now in the start of its way) written on C++ and made with boost libs for [Cross?] to fix usability of most known engines and get more flexible engine. Now is only working [tested] on Windows, but you can help to make it cross-platform)
 -----------------------------------------------------------------------------------------
 Supports:
 
 Renderer:
-+ DirectX
-  + 9
-  + 10
-+ OpenGL
++ bgfx
+
+UI:
++ nuklear
 
 Features:
 + Modular
@@ -16,19 +16,25 @@ Features:
 + Extensible and flexible
 + Intuitively understandable interface
 
+Unfeatures:
++ 1-level menu: nuklear doesn`t support popup in popup, ans as submenu too.
+
 -----------------------------------------------------------------------------------------
 Done:
 + Base
-+ DX10 renderer(basic)
++ DX10 renderer(basic, deprecated according to bgfx)
 + Vectors & Quaternions
 + Color
 + Plugin loader
 + Plugin API
 + Scene structure
++ Menu API(Adding and removing own menu items, up to 12 root)
++ Updated plugin API: settings and manager
++ Basic Editor GUI
++ Hierarchy window
 
 TODO:
-+ DX9 Renderer (In process...)
-+ OpenGL Renderer (Pending...)
++ bgfx integration(In process...)
 + Rendering scene (In process...)
 + Implementing materials and shaders (Pending...)
 + Property window (Pending...)

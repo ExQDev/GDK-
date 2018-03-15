@@ -23,7 +23,7 @@ void Exit()
 
 void About() 
 {
-	printf("About?:)");
+	printf("About?:)\n");
 }
 
 void TogglePluginMGR() 
@@ -165,9 +165,9 @@ void EditorMenu(nk_context *ctx)
 
 void PluginMGRWindow(nk_context* ctx) 
 {
-	if (nk_begin(ctx, "Plugins", nk_rect(0, 40, 320, 350), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_CLOSABLE))
+	if (nk_begin(ctx, "Plugins", nk_rect(850, 40, 320, 350), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_CLOSABLE))
 	{
-		static GDKModule* selectedPlugin = nullptr;
+		static shared_ptr<GDKModule> selectedPlugin = nullptr;
 		nk_layout_row_begin(ctx, NK_STATIC, 350, 2);
 		nk_layout_row_push(ctx, 130);
 		if (nk_group_begin(ctx, "PluginsList", 0)) {
@@ -175,8 +175,8 @@ void PluginMGRWindow(nk_context* ctx)
 			nk_layout_row_static(ctx, 18, 100, 1);
 			for (shared_ptr<GDKModule> mod : modules) {
 				if(mod)
-					if (nk_select_label(ctx, mod.get()->title, NK_TEXT_CENTERED, selectedPlugin == mod.get()))
-						selectedPlugin = mod.get();
+					if (nk_select_label(ctx, mod.get()->title, NK_TEXT_LEFT, selectedPlugin == mod))
+						selectedPlugin = mod;
 			}
 		} nk_group_end(ctx);
 		nk_layout_row_push(ctx, 150);
@@ -198,6 +198,32 @@ void PluginMGRWindow(nk_context* ctx)
 				
 				nk_layout_row_dynamic(ctx, 150, 1);
 				nk_label_wrap(ctx, selectedPlugin->description);
+
+				
+				nk_layout_row_dynamic(ctx, 25, 2);
+				if(selectedPlugin.get()->HasSettings())
+				if (nk_button_label(ctx, "Settings"))
+				{
+					printf("Opening settings... [%s]\n", selectedPlugin.get()->title);
+					selectedPlugin->Settings();
+				}
+				if (!selectedPlugin.get()->stopped)
+				{
+					if (nk_button_label(ctx, "Shutdown"))
+					{
+						printf("Shutting down... [%s]\n", selectedPlugin.get()->title);
+						selectedPlugin->Shutdown();
+					}
+				}
+				else
+				{
+					if (nk_button_label(ctx, "Run"))
+					{
+						printf("Starting... [%s]\n", selectedPlugin.get()->title);
+						selectedPlugin->Run(EditorInstance::GetSingleton());
+					}
+				}
+				
 
 
 			}

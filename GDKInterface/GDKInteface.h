@@ -25,11 +25,23 @@ public:
 	//Plugin version
 	char version[30];
 
+	//Path to the plugin, filled by runtime
+	std::string modulePath;
+
 	//Main process instance. Used by plugin from code.
 	AppInstance* instance;
 
+	//When Shutdown() called turn this to true, please. Otherwise plugin will work incorrectly.
+	bool stopped;
+
 	//Function for run plugin. Runs in the background thread.
 	virtual void Run(AppInstance* instance) = 0;
+
+	//Returns true if mod has settings
+	virtual bool HasSettings() = 0;
+
+	//Opens menu if plugin has settings
+	virtual void Settings() = 0;
 
 	//Function that calls before plugin unloading. E.g. when app closes.
 	virtual void Shutdown() = 0;

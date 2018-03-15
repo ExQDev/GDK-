@@ -42,6 +42,7 @@ void InitModules(EditorInstance* instance)
 				OutputDebugStringA(bfs::path(p.path()).concat("\n").generic_string().c_str());
 				boost::shared_ptr<GDKModule> plugin;
 				plugin = dll::import<GDKModule>(p.path(), "plugin");
+				plugin.get()->modulePath = p.path().generic_string();
 				modules.push_back(plugin);
 				boost::thread(boost::bind(&GDKModule::Run, plugin.get(), instance));
 			}
