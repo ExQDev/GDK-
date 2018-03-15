@@ -12,7 +12,7 @@ private:
 
 	
 public:
-	IRenderer * renderer;
+	IRenderer * renderer = nullptr;
 	Texture renderTex;
 	int r_width = 640, r_height = 480;
 	unsigned long int renderLayers;
@@ -40,7 +40,8 @@ public:
 	void Init(GameObject* parent)
 	{
 		transform = &parent->transform;
-		this->renderer->transform = transform;
+		if(this->renderer)
+			this->renderer->transform = transform;
 		parent->components.push_back(this);
 	}
 	void FixedUpdate() {}

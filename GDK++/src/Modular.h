@@ -3,6 +3,8 @@
 #define GDK_MODULAR_H
 #include "../../GDKInterface/GDKInteface.h"
 
+#include "../../GDKInterface/EditorInstance.h"
+
 #define BOOST_FILESYSTEM_VERSION 3
 #define BOOST_FILESYSTEM_NO_DEPRECATED
 #include <boost\filesystem.hpp>
@@ -11,6 +13,7 @@ namespace bfs = boost::filesystem;
 #include <boost\container\list.hpp>
 namespace bc = boost::container;
 
+
 #include <boost\dll.hpp>
 #include <boost\thread.hpp>
 
@@ -18,8 +21,8 @@ namespace bc = boost::container;
 #include <Windows.h>
 #endif // USE_WINAPI
 
+bc::list<boost::shared_ptr<GDKModule>> modules;
 
-static bc::list<boost::shared_ptr<GDKModule>> modules;
 
 void InitModules(EditorInstance* instance) 
 {

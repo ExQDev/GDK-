@@ -8,8 +8,9 @@
 #include <GDKInterface/EditorMenu/MenuStrip.h>
 #include <GDKEngine\Dependencies\nuklear_cross\stb_image.h>
 #include <GDKEngine\Dependencies\lodepng\lodepng.h>
+#include "../Modular.h"
 
-static bool renderWindow = true, hierarchyWindow = true, pluginMGR = true;
+static bool renderWindow = true, hierarchyWindow = true, pluginMGR;
 
 void InitEUI(std::string title, int w, int h);
 void EditorWindow(void* loopArg);
@@ -27,7 +28,8 @@ void About()
 
 void TogglePluginMGR() 
 {
-	pluginMGR = !pluginMGR;
+	pluginMGR = true;
+	nk_window_show(nkc_get_ctx(EditorInstance::GetSingleton()->nkc_handle), "Plugins", nk_show_states::NK_SHOWN);
 }
 
 void ToggleRenderWindow() 
@@ -54,10 +56,10 @@ void InitMenu()
 	//EditorInstance::GetSingleton()->menuStrip->AddItem("", "", Exit);
 
 	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Plugin manager", TogglePluginMGR);
-	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "--------------", 0);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "------------------", 0);
 	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Render window", ToggleRenderWindow);
 	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "Hierarchy window", ToggleHierarchyWindow);
-	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "--------------", 0);
+	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "------------------", 0);
 	EditorInstance::GetSingleton()->menuStrip->AddItem("Window/", "About", About);
 }
 
@@ -161,6 +163,50 @@ void EditorMenu(nk_context *ctx)
 	nk_menubar_end(ctx);
 }
 
+void PluginMGRWindow(nk_context* ctx) 
+{
+	if (nk_begin(ctx, "Plugins", nk_rect(0, 40, 320, 350), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_CLOSABLE))
+	{
+		static GDKModule* selectedPlugin = nullptr;
+		nk_layout_row_begin(ctx, NK_STATIC, 350, 2);
+		nk_layout_row_push(ctx, 130);
+		if (nk_group_begin(ctx, "PluginsList", 0)) {
+			
+			nk_layout_row_static(ctx, 18, 100, 1);
+			for (shared_ptr<GDKModule> mod : modules) {
+				if(mod)
+					if (nk_select_label(ctx, mod.get()->title, NK_TEXT_CENTERED, selectedPlugin == mod.get()))
+						selectedPlugin = mod.get();
+			}
+		} nk_group_end(ctx);
+		nk_layout_row_push(ctx, 150);
+		if (nk_group_begin(ctx, "PluginDetailes", 0)) {
+			if (selectedPlugin) 
+			{
+				nk_layout_row_dynamic(ctx, 20, 1);
+				nk_label(ctx, selectedPlugin->title, NK_TEXT_LEFT);
+				
+				nk_layout_row_dynamic(ctx, 18, 1);
+				nk_label(ctx, selectedPlugin->author, NK_TEXT_LEFT);
+				
+				nk_layout_row_dynamic(ctx, 18, 1);
+				nk_label(ctx, selectedPlugin->version, NK_TEXT_LEFT);
+				
+				nk_layout_row_dynamic(ctx, 18, 1);
+				nk_label(ctx, selectedPlugin->site, NK_TEXT_LEFT);
+
+				
+				nk_layout_row_dynamic(ctx, 150, 1);
+				nk_label_wrap(ctx, selectedPlugin->description);
+
+
+			}
+		} nk_group_end(ctx);
+	}
+	
+	nk_end(ctx);
+}
+
 void HierarchyWindow(nk_context* ctx) 
 {
 	if (nk_begin(ctx, "Hierarchy", nk_rect(0, 40, 250, 350), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_CLOSABLE))
@@ -241,6 +287,9 @@ void EditorWindow(void* loopArg)
 
 	if (hierarchyWindow)
 		HierarchyWindow(ctx);
+
+	if (pluginMGR)
+		PluginMGRWindow(ctx);
 
 	nkc_render(EditorInstance::GetSingleton()->nkc_handle, nk_rgb(40, 40, 40));
 }
