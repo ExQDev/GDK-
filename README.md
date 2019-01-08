@@ -1,4 +1,4 @@
-# GDK++
+# GDK++ [ NOW IS DEPRECATED, WILL BE REMOVED ]
 Open-source game engine(now in the start of its way) written on C++ and made with boost libs for [Cross?] to fix usability of most known engines and get more flexible engine. Now is only working [tested] on Windows, but you can help to make it cross-platform)
 -----------------------------------------------------------------------------------------
 Supports:
