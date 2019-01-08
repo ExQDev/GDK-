@@ -1,6 +1,13 @@
-# GDK++ [ NOW IS DEPRECATED, WILL BE REMOVED ]
+# GDK++ [ DEPRECATED ]
 Open-source game engine(now in the start of its way) written on C++ and made with boost libs for [Cross?] to fix usability of most known engines and get more flexible engine. Now is only working [tested] on Windows, but you can help to make it cross-platform)
 -----------------------------------------------------------------------------------------
+
+**!!! ATTENTION !!!**
+
+**FROM 1.01.2019 THIS REPO IS DEPRECATED, LOOK [NukeEngine](https://github.com/ExQDev/NukeEngine) INSTEAD**
+
+-----
+
 Supports:
 
 Renderer:
@@ -17,7 +24,7 @@ Features:
 + Intuitively understandable interface
 
 Unfeatures:
-+ 1-level menu: nuklear doesn`t support popup in popup, ans as submenu too.
++ 1-level menu: nuklear doesn't support popup in popup, ans as submenu too.
 
 -----------------------------------------------------------------------------------------
 Done:
